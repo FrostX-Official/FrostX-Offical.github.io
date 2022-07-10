@@ -1,2 +1,3 @@
 ## FrostX's Portfolio
-Just making page right now
+Hey, I am FrostX.
+Making my portfolio right now :)
