@@ -1,5 +1,4 @@
-name: buildDocs
-
+name: ci 
 on:
   push:
     branches:
