@@ -1,2 +1,2 @@
 # How to download LunariLib?
-To download LunariLib, the GuiLib.lua, [click here.](../get scammed, there's no download still)
+There's no download link still, please wait until i will release library properly ;D
