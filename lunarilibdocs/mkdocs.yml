@@ -1,4 +1,5 @@
 site_name: LunariLib Documentation
+site_url: https://frostx-official.github.io/lunarilibdocs/ 
 
 theme:
   name: material
