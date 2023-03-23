@@ -24,4 +24,4 @@ jobs:
           path: .cache
       - run: pip install mkdocs-material 
       - run: pip install mkdocs-awesome-pages-plugin
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force --config-file lunarilibdocs/mkdocs.yml
