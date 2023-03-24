@@ -1,6 +1,5 @@
-## FrostX's Portfolio
-Hey, I am FrostX. (Denial)
-Making my portfolio right now :)
+## FrostX's Portal
+There's things that I publish here including portfolio.
 
 # New 2.0 version:
 ~ frostx.is-a.dev
