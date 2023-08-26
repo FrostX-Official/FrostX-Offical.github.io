@@ -1,10 +1,1180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html><head><style type="text/css">.turbo-progress-bar {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #0076ff;
+    z-index: 9999;
+    transition:
+      width 300ms ease-out,
+      opacity 150ms 150ms ease-in;
+    transform: translate3d(0, 0, 0);
+  }
+  </style><style id="st_globalStyles">
+  /* SCROLLBAR */
+  
+  [dark-scroll]::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  [dark-scroll]::-webkit-scrollbar-track-piece {
+    background-color: #2b2b2b;
+    border: 1px solid #1d1d1d;
+  }
+  
+  [dark-scroll]::-webkit-scrollbar-thumb {
+    height: 10px;
+    background-color: #4d4d4d;
+  }
+  [dark-scroll]::-webkit-scrollbar-thumb:hover {
+    background-color: #5a5a5a;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .a{
+    text-decoration: none;
+    color:rgb(255, 255, 255)
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(67, 59, 119); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(67, 59, 119); 
+  }
+  
+  body[mode='code'] [data-id]:not(.hidden) {
+    cursor: default;
+  }
+  
+  /* default node state */
+  
+  body[mode='code'] [data-id]:not(.hidden), body[mode='comments'] [data-id]:not(.hidden) {
+    pointer-events: all;
+  }
+  
+  /* is_image */
+  
+  body[mode='code'] [data-id].is_image [data-id], body[mode='comments'] [data-id].is_image [data-id] {
+    pointer-events: none !important;
+  }
+  
+  /* without a data-id or ignored */
+  
+  [data-id].ignore,body[mode='code'] *:not([data-id]) {
+    pointer-events: none !important;
+  }
+  /* disable transforms for ignored elements */
+  
+  
+  body[mode='code'] [data-id]:hover{
+    transform: none !important;
+  }
+  
+  </style><script id="anima-hotspots-script" src="hotspots.js"></script><style>
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+  
+  @import url("https://fonts.googleapis.com/css?family=Inter:400,200italic,200,600,500italic,300,500,700");
+  
+  /* The following line is used to measure usage of this code. You can remove it if you want. */
+  @import url("https://px.animaapp.com/62c59d66b40a6d77cdef4d9b.62c59d67ae22a30bf5c04f75.3n2V0XV.hch.png");
+  
+  
+  .screen textarea:focus,
+  .screen input:focus {
+    outline: none;
+  }
+  
+  .screen * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+  
+  .screen div {
+    -webkit-text-size-adjust: none;
+  }
+  
+  .component-wrapper a {
+    display: contents;
+    pointer-events: auto;
+    text-decoration: none;
+  }
+  
+  .component-wrapper * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+  
+  .component-wrapper a *,
+  .component-wrapper input,
+  .component-wrapper video,
+  .component-wrapper iframe {
+    pointer-events: auto;
+  }
+  
+  .component-wrapper.not-ready,
+  .component-wrapper.not-ready * {
+    visibility: hidden !important;
+  }
+  
+  .screen a {
+    display: contents;
+    text-decoration: none;
+  }
+  
+  .full-width-a {
+    width: 100%;
+  }
+  
+  .full-height-a {
+    height: 100%;
+  }
+  
+  .container-center-vertical {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .container-center-vertical > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+  }
+  
+  .container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+  }
+  
+  .container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+  }
+  
+  .auto-animated div {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .auto-animated input {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .auto-animated .container-center-vertical,
+  .auto-animated .container-center-horizontal {
+    opacity: 1;
+  }
+  
+  .overlay-base {
+    display: none;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .overlay-base.animate-appear {
+    align-items: center;
+    animation: reveal 0.3s ease-in-out 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+  }
+  
+  .overlay-base.animate-disappear {
+    animation: reveal 0.3s ease-in-out 1 reverse forwards;
+    display: block;
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  .overlay-base.animate-disappear * {
+    pointer-events: none;
+  }
+  
+  @keyframes reveal {
+    from { opacity: 0 }
+   to { opacity: 1 }
+  }
+  
+  .animate-nodelay {
+    animation-delay: 0s;
+  }
+  
+  .align-self-flex-start {
+    align-self: flex-start;
+  }
+  
+  .align-self-flex-end {
+    align-self: flex-end;
+  }
+  
+  .align-self-flex-center {
+    align-self: flex-center;
+  }
+  
+  .valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .valign-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .listeners-active,
+  .listeners-active * {
+    pointer-events: auto;
+  }
+  
+  .hidden,
+  .hidden * {
+    pointer-events: none;
+    visibility: hidden;
+  }
+  
+  .smart-layers-pointers,
+  .smart-layers-pointers * {
+    pointer-events: auto;
+    visibility: visible;
+  }
+  
+  .listeners-active-click,
+  .listeners-active-click * {
+    cursor: pointer;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  :root { 
+    --black: #000000;
+    --casal: #30587780;
+    --chambray: #373f8680;
+    --gigas: #51378680;
+    --la-palma: #39863780;
+    --mine-shaft: #333333;
+    --quick-silver: #a7a7a780;
+    --white: #ffffff;
+    --white-2: #ffffff1a;
+   
+    --font-size-l: 32px;
+    --font-size-m: 31px;
+    --font-size-s: 28px;
+    --font-size-xl: 48px;
+    --font-size-xs: 27px;
+    --font-size-xxs: 20px;
+    --font-size-xxxs: 18px;
+   
+    --font-family-inter: "Inter", Helvetica;
+  }
+  .inter-semi-bold-white-31px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .inter-normal-white-20px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxs);
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  .inter-semi-bold-white-20px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxs);
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .inter-light-white-32px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 300;
+  }
+  
+  .inter-semi-bold-white-32px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .inter-semi-bold-white-28px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .desktop-1 {
+    background-color: #282828;
+    height: 3000px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .desktop-1 .text1-Ys8k0x {
+    background-color: transparent;
+    height: 85px;
+    left: 143px;
+    position: absolute;
+    top: 143px;
+    width: 451px;
+  }
+  
+  .desktop-1 .title-gQJ6H2 {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    left: 42px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: auto;
+  }
+  
+  .desktop-1 .rectangle-1-gQJ6H2 {
+    background-color: var(--white);
+    height: 25px;
+    left: 0px;
+    position: absolute;
+    top: 17px;
+    width: 25px;
+  }
+  
+  .known-as-frost-gQJ6H2 {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 200;
+    height: auto;
+    left: 42px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 46px;
+    width: auto;
+  }
+  
+  .desktop-1 .text2-Ys8k0x {
+    background-color: transparent;
+    height: 78px;
+    left: 148px;
+    position: absolute;
+    top: 271px;
+    width: 435px;
+  }
+  
+  .desktop-1 .a-software-developer-wMor0f {
+    background-color: transparent;
+    height: auto;
+    left: 37px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: auto;
+  }
+  
+  .desktop-1 .span1-jSreAb {
+    font-size: var(--font-size-l);
+    font-weight: 500;
+  }
+  
+  .desktop-1 .rectangle-2-wMor0f {
+    background-color: var(--white);
+    height: 15px;
+    left: 0px;
+    position: absolute;
+    top: 32px;
+    width: 15px;
+  }
+  
+  .desktop-1 .text3-Ys8k0x {
+    background-color: transparent;
+    height: 78px;
+    left: 148px;
+    position: absolute;
+    top: 378px;
+    width: 541px;
+  }
+  
+  .desktop-1 .i-started-programmin-1I6Q8Y {
+    background-color: transparent;
+    height: auto;
+    left: 37px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: auto;
+  }
+  
+  .desktop-1 .rectangle-3-1I6Q8Y {
+    background-color: var(--white);
+    height: 15px;
+    left: 0px;
+    position: absolute;
+    top: 32px;
+    width: 15px;
+  }
+  
+  .desktop-1 .discord-Ys8k0x {
+    height: 593px;
+    left: 905px;
+    top: 57px;
+    width: 392px;
+  }
+  
+  .desktop-1 .about-me-and-my-story-Ys8k0x {
+    background-color: transparent;
+    height: auto;
+    left: 523px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 721px;
+    width: auto;
+  }
+  
+  .desktop-1 .infoboards-Ys8k0x {
+    background-color: transparent;
+    height: 694px;
+    left: 143px;
+    position: absolute;
+    top: 813px;
+    width: 1154px;
+  }
+  
+  .desktop-1 .infoboard1-3fFPmu {
+    background-color: transparent;
+    height: 340px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 804px;
+  }
+  
+  .desktop-1 .information-board-0j2rMw {
+    background-color: var(--la-palma);
+    border-radius: 20px;
+    height: 340px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 800px;
+  }
+  
+  .desktop-1 .number-0j2rMw {
+    background-color: transparent;
+    height: 51px;
+    left: 736px;
+    position: absolute;
+    top: 11px;
+    width: 53px;
+  }
+  
+  .desktop-1 .number-vhRFba {
+    background-color: var(--la-palma);
+    border-radius: 10px;
+    height: 50px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 50px;
+  }
+
+  .contact-me-frx{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .desktop-1 .x1-vhRFba {
+    background-color: transparent;
+    height: 51px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 51px;
+  }
+  
+  .desktop-1 .back-in-2019-when-i-was-10-0j2rMw {
+    background-color: transparent;
+    height: auto;
+    left: 11px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 15px;
+    width: 297px;
+  }
+  
+  .desktop-1 .i-started-creating-g-0j2rMw {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 11px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 92px;
+    width: 763px;
+  }
+  
+  .desktop-1 .infoboard2-3fFPmu {
+    background-color: transparent;
+    height: 694px;
+    left: 814px;
+    position: absolute;
+    top: 0px;
+    width: 344px;
+  }
+  
+  .desktop-1 .information-board2-in1aWY {
+    background-color: var(--chambray);
+    border-radius: 20px;
+    height: 694px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 340px;
+  }
+  
+  .desktop-1 .now-i-am-14-years-ol-in1aWY {
+    background-color: transparent;
+    height: auto;
+    left: 17px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 15px;
+    width: 304px;
+  }
+  
+  .desktop-1 .span1-NHmXTs {
+    font-size: var(--font-size-xxxs);
+    font-weight: 200;
+  }
+  
+  .desktop-1 .who-is-coding-for-fu-in1aWY {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 17px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 92px;
+    width: 304px;
+  }
+  
+  .desktop-1 .number-in1aWY {
+    background-color: transparent;
+    height: 51px;
+    left: 276px;
+    position: absolute;
+    top: 631px;
+    width: 53px;
+  }
+  
+  .desktop-1 .number-g5oBX9 {
+    background-color: var(--chambray);
+    border-radius: 10px;
+    height: 50px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 50px;
+  }
+  
+  .desktop-1 .x2-g5oBX9 {
+    background-color: transparent;
+    height: 51px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 51px;
+  }
+  
+  .desktop-1 .infoboard3-3fFPmu {
+    background-color: transparent;
+    height: 340px;
+    left: 0px;
+    position: absolute;
+    top: 354px;
+    width: 804px;
+  }
+  
+  .desktop-1 .information-board4-dslmzg {
+    background-color: #86673780;
+    border-radius: 20px;
+    height: 340px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 800px;
+  }
+  
+  .desktop-1 .ill-continue-dslmzg {
+    background-color: transparent;
+    height: 50px;
+    left: 75px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 12px;
+    width: 511px;
+  }
+  
+  .desktop-1 .now-i-know-a-lot-of-dslmzg {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 10px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 77px;
+    width: 764px;
+  }
+  
+  .desktop-1 .number-dslmzg {
+    background-color: transparent;
+    height: 51px;
+    left: 12px;
+    position: absolute;
+    top: 11px;
+    width: 53px;
+  }
+  
+  .desktop-1 .number-YyZdgr {
+    background-color: #86673780;
+    border-radius: 10px;
+    height: 50px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 50px;
+  }
+  
+  .desktop-1 .x3-YyZdgr {
+    background-color: transparent;
+    height: 51px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 51px;
+  }
+  
+  .desktop-1 .my-skills-Ys8k0x {
+    background-color: transparent;
+    height: auto;
+    left: 652px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 1578px;
+    width: auto;
+  }
+  
+  .desktop-1 .skills-Ys8k0x {
+    background-color: transparent;
+    height: 1056px;
+    left: 370px;
+    position: absolute;
+    top: 1663px;
+    width: 701px;
+  }
+  
+  .desktop-1 .python-s6Xmfc {
+    background-color: transparent;
+    height: 200px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 706px;
+  }
+  
+  .desktop-1 .main-am7xGZ {
+    background-color: var(--la-palma);
+  }
+  
+  .desktop-1 .bg-am7xGZ {
+    background-color: var(--la-palma);
+  }
+  
+  .desktop-1 .logo-am7xGZ {
+    height: 100px;
+    left: 57px;
+    top: 50px;
+    width: 91px;
+  }
+  
+  .desktop-1 .lang_status-am7xGZ {
+    top: 65px;
+  }
+  
+  .desktop-1 .bar-am7xGZ {
+    border-color: var(--white-2);
+  }
+  
+  .desktop-1 .progress-am7xGZ {
+    background-color: var(--la-palma);
+    border-color: var(--white-2);
+    width: 435px;
+  }
+  
+  .desktop-1 .lua-s6Xmfc {
+    background-color: transparent;
+    height: 200px;
+    left: 0px;
+    position: absolute;
+    top: 214px;
+    width: 706px;
+  }
+  
+  .desktop-1 .main-jAYAws {
+    background-color: var(--chambray);
+  }
+  
+  .desktop-1 .bg-jAYAws {
+    background-color: var(--chambray);
+  }
+  
+  .desktop-1 .logo-jAYAws {
+    height: 100px;
+    left: 57px;
+    top: 50px;
+    width: 91px;
+  }
+  
+  .desktop-1 .lang_status-jAYAws {
+    top: 68px;
+  }
+  
+  .desktop-1 .bar-jAYAws {
+    border-color: var(--white-2);
+  }
+  
+  .desktop-1 .progress-jAYAws {
+    background-color: var(--chambray);
+    border-color: var(--white-2);
+    width: 423px;
+  }
+  
+  .desktop-1 .c-s6Xmfc {
+    left: 1px;
+    top: 428px;
+  }
+  
+  .desktop-1 .main-tPRc56 {
+    background-color: var(--gigas);
+  }
+  
+  .desktop-1 .bg-tPRc56 {
+    background-color: var(--gigas);
+  }
+  
+  .desktop-1 .logo-tPRc56 {
+    height: 100px;
+    left: 57px;
+    top: 50px;
+    width: 91px;
+  }
+  
+  .desktop-1 .lang_status-tPRc56 {
+    top: 68px;
+  }
+  
+  .desktop-1 .bar-tPRc56 {
+    border-color: var(--white-2);
+  }
+  
+  .desktop-1 .progress-tPRc56 {
+    background-color: var(--gigas);
+    border-color: var(--white-2);
+    width: 241px;
+  }
+  
+  .desktop-1 .c-P92ysT {
+    left: 0px;
+    top: 642px;
+  }
+  
+  .desktop-1 .main-Z5AzFD {
+    background-color: var(--casal);
+  }
+  
+  .desktop-1 .bg-Z5AzFD {
+    background-color: var(--casal);
+  }
+  
+  .desktop-1 .logo-Z5AzFD {
+    height: 100px;
+    left: 57px;
+    top: 50px;
+    width: 91px;
+  }
+  
+  .desktop-1 .lang_status-Z5AzFD {
+    top: 68px;
+  }
+  
+  .desktop-1 .bar-Z5AzFD {
+    border-color: var(--white-2);
+  }
+  
+  .desktop-1 .progress-Z5AzFD {
+    background-color: var(--casal);
+    border-color: var(--white-2);
+    width: 46px;
+  }
+  
+  .desktop-1 .white-hat-s6Xmfc {
+    background-color: transparent;
+    height: 200px;
+    left: 1px;
+    position: absolute;
+    top: 856px;
+    width: 706px;
+  }
+  
+  .desktop-1 .main-wasOBH {
+    background-color: var(--quick-silver);
+  }
+  
+  .desktop-1 .bg-wasOBH {
+    background-color: var(--quick-silver);
+  }
+  
+  .desktop-1 .logo-wasOBH {
+    height: 100px;
+    left: 57px;
+    top: 50px;
+    width: 91px;
+  }
+  
+  .desktop-1 .lang_status-wasOBH {
+    top: 68px;
+  }
+  
+  .desktop-1 .bar-wasOBH {
+    border-color: #00000080;
+  }
+  
+  .desktop-1 .progress-wasOBH {
+    background-color: var(--quick-silver);
+    border-color: #00000080;
+    width: 30px;
+  }
+  
+  .desktop-1 .footer-Ys8k0x {
+    background-color: transparent;
+    width: 1000%;
+    height: 199px;
+    left: 0px;
+    position: absolute;
+    top: 2801px;
+  }
+  
+  .desktop-1 .footer-main-u1Y9HI {
+    background-color: #1f1f1f;
+    height: 199px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+  }
+  
+  .desktop-1 .frostxis-adev-u1Y9HI {
+    background-color: transparent;
+    height: auto;
+    left: 143px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 49px;
+    width: auto;
+  }
+  
+  .desktop-1 .developer-u1Y9HI {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 143px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 84px;
+    width: auto;
+  }
+  
+  .desktop-1 .git-hub-u1Y9HI {
+    background-color: transparent;
+    height: 51px;
+    left: 1118px;
+    position: absolute;
+    top: 49px;
+    width: 183px;
+  }
+  
+  .desktop-1 .logo-uFDoLZ {
+    height: 50px;
+    left: 0px;
+    top: 1px;
+    width: 50px;
+  }
+  
+  .desktop-1 .name-uFDoLZ {
+    left: 53px;
+  }
+  
+  .desktop-1 .discord-u1Y9HI {
+    height: 51px;
+    left: 1126px;
+    top: 100px;
+    width: 175px;
+  }
+  
+  .desktop-1 .logo-fAP6Vs {
+    height: 35px;
+    left: 0px;
+    top: 8px;
+    width: 35px;
+  }
+  
+  .desktop-1 .name-fAP6Vs {
+    left: 45px;
+  }
+  
+  .desktop-1 .frame-1-Ys8k0x {
+    background-color: #232428;
+    border: 1px solid;
+    border-color: #363636;
+    border-radius: 10px;
+    height: 100px;
+    left: 143px;
+    overflow: hidden;
+    position: absolute;
+    top: 550px;
+    width: 300px;
+  }
+  
+  .desktop-1 .contact-me-Ys8k0x {
+    background-color: transparent;
+    height: 102px;
+    left: 143px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 547px;
+    width: 300px;
+  }
+  
+  .desktop-1 .bar {
+    background-color: var(--mine-shaft);
+    border: 1px solid;
+    border-radius: 10px;
+    height: 72px;
+    left: 190px;
+    position: absolute;
+    top: 103px;
+    width: 482px;
+  }
+  
+  .desktop-1 .bg {
+    border-radius: 10px;
+    height: 150px;
+    left: 28px;
+    position: absolute;
+    top: 25px;
+    width: 150px;
+  }
+  
+  .desktop-1 .c {
+    background-color: transparent;
+    height: 200px;
+    position: absolute;
+    width: 706px;
+  }
+  
+  .desktop-1 .discord {
+    background-color: transparent;
+    position: absolute;
+  }
+  
+  .desktop-1 .lang_name {
+    background-color: transparent;
+    height: 50px;
+    left: 189px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 25px;
+    width: 511px;
+  }
+  
+  .desktop-1 .lang_status {
+    background-color: transparent;
+    height: auto;
+    left: 189px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 480px;
+  }
+  
+  .desktop-1 .logo {
+    background-color: transparent;
+    position: absolute;
+  }
+  
+  .desktop-1 .main {
+    border-radius: 20px;
+    height: 200px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 700px;
+  }
+  
+  .desktop-1 .name {
+    background-color: transparent;
+    height: 51px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: 128px;
+  }
+  
+  .desktop-1 .percent {
+    background-color: transparent;
+    height: 74px;
+    left: 188px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 101px;
+    width: 484px;
+  }
+  
+  .desktop-1 .progress {
+    border: 1px solid;
+    border-radius: 10px;
+    height: 72px;
+    left: 190px;
+    position: absolute;
+    top: 103px;
+  }
+  
+  </style>
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>👋 Hey! I am FrostX</title>
-    <link rel="stylesheet" href="style.css">
+
     <script defer src="app.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -17,51 +1187,126 @@
     <meta content="FrostX's Portal" property="og:title" />
     <meta content="Ye, this is site where I post my things and also portfolio." property="og:description" />
     <meta content="#382BF0" data-react-helmet="true" name="theme-color" />
-    
-</head>
-<body>
-    <section class="hidden">
-        <img src="assets/X.png" alt="My Avatar.">
-        <section class="skip-avatar"></section>
-        <label class="main-1">👋 Hello! My name is <b>Denial</b></label>
-        <label class="main-2">And I am <b>developer.</b> 🔧</label>
-        <br><br>
-        <label for="current_projects">current_projects =</label>
-        <br>
-        <select name="current_projects" id="current_projects">
-            <option value="voiceblox">Voiceblox &#xf11b;</option>
-            <option value="perpetuity">Perpetuity &#xf11b;</option>
-            <option value="discord_bots">Discord Bots &#xf013;</option>
-            <option value="other">Other &#xf219;</option>
-        </select>
-    </section>
-    <br>
-    <section class="hidden">
-        <section class="skills">
-            <h2>There's my <b>developing skills</b></h2>
-
-            <h4>Python ~ <progress value="81" max="100">Python</progress> ~ Pro Developer</h4>
-            <h4>Lua ~ <progress value="73" max="100">Lua</progress> ~ Great Scripter</h4>
-            <h4>Web Languages ~ <progress value="42" max="100">Web Languages</progress> ~ Newbie</h4>
-            <h4>Java ~ <progress value="42" max="100">Java</progress> ~ Newbie</h4>
-        </section>
-    </section>
-    <section class="skip-1"></section>
-    <section class="hidden">
-        <section class="socials">
-            <h2>My <b>socials</b></h2>
-
-            <h3>My GitHub: <a href="https://github.com/FrostX-Official">click</a></h3>
-            <h3>My RUS YouTube: <a href="https://www.youtube.com/c/FrostX_gg">click</a></h3>
-            <h3>My RUS Discord: <a href="https://discord.gg/6ex8fQ5">click</a></h3>
-            <h3>DM on Discord: <b>Frost X#6215</b></h3>
-        </section>
-    </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <section class="easter"><h5>STOP SCROLLING BRUHHH</h5></section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <section class="easter"><h1>lmfao.</h1></section>
-    <br>
-    <section class="easter"><h1><a href="https://pnrtscr.com/qnsr5g">Do not click. I am warning you.</a></h1></section>
-</body>
+  </head>
+  <body style="margin: 0;background: #282828;">
+    <input type="hidden" id="anPageName" name="page" value="desktop-1">
+    <div class="container-center-horizontal">
+       <div class="desktop-1 screen " data-id="1:2">
+          <div class="text1-Ys8k0x" data-id="1:12">
+             <h1 class="title-gQJ6H2" data-id="1:6">Denial Francesco</h1>
+             <div class="rectangle-1-gQJ6H2" data-id="1:9"></div>
+             <div class="known-as-frost-gQJ6H2" data-id="1:15" id="known-as">known as “frost”</div>
+          </div>
+          <div class="text2-Ys8k0x" data-id="1:13">
+             <p class="a-software-developer-wMor0f inter-light-white-32px" data-id="1:7"><span class="span0-jSreAb inter-light-white-32px">A </span><span class="span1-jSreAb span1">software</span><span class="span2-jSreAb inter-light-white-32px"> developer with<br>a 4 years experience.</span></p>
+             <div class="rectangle-2-wMor0f" data-id="1:10"></div>
+          </div>
+          <div class="text3-Ys8k0x" data-id="1:14">
+             <p class="i-started-programmin-1I6Q8Y inter-light-white-32px" data-id="1:8">I started programming since 2019<br>and doing it still to this day ;)</p>
+             <div class="rectangle-3-1I6Q8Y" data-id="1:11"></div>
+          </div>
+          <img class="discord-Ys8k0x discord" data-id="3:151" src="assets/discord-profile.png" alt="Discord">
+          <p class="about-me-and-my-story-Ys8k0x inter-semi-bold-white-32px" data-id="1:18">About Me and My Story ;)</p>
+          <div class="infoboards-Ys8k0x" data-id="1:139">
+             <div class="infoboard1-3fFPmu" data-id="1:29">
+                <div class="information-board-0j2rMw" data-id="1:19"></div>
+                <div class="number-0j2rMw" data-id="1:53">
+                   <div class="number-vhRFba" data-id="1:51"></div>
+                   <div class="x1-vhRFba valign-text-middle inter-semi-bold-white-31px" data-id="1:52">1</div>
+                </div>
+                <p class="back-in-2019-when-i-was-10-0j2rMw inter-semi-bold-white-31px" data-id="1:20">Back in 2019 when I was 10,</p>
+                <p class="i-started-creating-g-0j2rMw" data-id="1:21">I started creating games on Unity and learning python and other basic programming languages, it’s been 4 years and know I can write my own plugin frameworks, libraries and bots on python.<br>I am 14 now, still a kid who learns languages, but a lot harder now like C++ and others.</p>
+             </div>
+             <div class="infoboard2-3fFPmu" data-id="1:33">
+                <div class="information-board2-in1aWY" data-id="1:22"></div>
+                <p class="now-i-am-14-years-ol-in1aWY inter-semi-bold-white-28px" data-id="1:30"><span class="span0-NHmXTs inter-semi-bold-white-28px">Now, I am 14 years old<br>scholar </span><span class="span1-NHmXTs span1">(8th grade, 1 more ;D)</span><span class="span2-NHmXTs inter-semi-bold-white-28px">,</span></p>
+                <p class="who-is-coding-for-fu-in1aWY" data-id="1:31">who is coding for fun, creates useful utility applications. I am from Russia and still live here. I would like to create useful tools on C# or Python, I can also create simple games on Luau (Roblox Lua). I also taught people programming in my school, and also my online friends. Now they can create applications like me,<br>and that’s cool ;)</p>
+                <div class="number-in1aWY" data-id="1:54">
+                   <div class="number-g5oBX9" data-id="1:55"></div>
+                   <div class="x2-g5oBX9 valign-text-middle inter-semi-bold-white-31px" data-id="1:56">2</div>
+                </div>
+             </div>
+             <div class="infoboard3-3fFPmu" data-id="1:68">
+                <div class="information-board4-dslmzg" data-id="1:28"></div>
+                <div class="ill-continue-dslmzg valign-text-middle inter-semi-bold-white-31px" data-id="1:62">I’ll continue,</div>
+                <p class="now-i-know-a-lot-of-dslmzg" data-id="1:63">Now I know a lot of programming languages, and would like to put here progress bars that will display how good I know them...</p>
+                <div class="number-dslmzg" data-id="1:57">
+                   <div class="number-YyZdgr" data-id="1:58"></div>
+                   <div class="x3-YyZdgr valign-text-middle inter-semi-bold-white-31px" data-id="1:59">3</div>
+                </div>
+             </div>
+          </div>
+          <div class="my-skills-Ys8k0x inter-semi-bold-white-32px" data-id="1:69">My Skills</div>
+          <div class="skills-Ys8k0x" data-id="1:138">
+             <div class="python-s6Xmfc" data-id="1:93">
+                <div class="main-am7xGZ main" data-id="1:82"></div>
+                <div class="bg-am7xGZ bg" data-id="1:85"></div>
+                <img class="logo-am7xGZ logo" data-id="1:84" src="assets/python.png" alt="python">
+                <div class="lang_name valign-text-middle inter-semi-bold-white-31px" data-id="1:86">Python</div>
+                <div class="lang_status-am7xGZ lang_status inter-normal-white-20px" data-id="1:87">Advanced</div>
+                <div class="bar-am7xGZ bar" data-id="1:88"></div>
+                <div class="progress-am7xGZ progress" data-id="1:90"></div>
+                <div class="percent valign-text-middle inter-semi-bold-white-20px" data-id="1:92">90%</div>
+             </div>
+             <div class="lua-s6Xmfc" data-id="1:94">
+                <div class="main-jAYAws main" data-id="1:95"></div>
+                <div class="bg-jAYAws bg" data-id="1:96"></div>
+                <img class="logo-jAYAws logo" data-id="1:97" src="assets/lua.png" alt="lua">
+                <div class="lang_name valign-text-middle inter-semi-bold-white-31px" data-id="1:98">Lua</div>
+                <div class="lang_status-jAYAws lang_status inter-normal-white-20px" data-id="1:99">Advanced</div>
+                <div class="bar-jAYAws bar" data-id="1:100"></div>
+                <div class="progress-jAYAws progress" data-id="1:101"></div>
+                <div class="percent valign-text-middle inter-semi-bold-white-20px" data-id="1:102">88%</div>
+             </div>
+             <div class="c-s6Xmfc c" data-id="1:103">
+                <div class="main-tPRc56 main" data-id="1:104"></div>
+                <div class="bg-tPRc56 bg" data-id="1:105"></div>
+                <img class="logo-tPRc56 logo" data-id="1:106" src="assets/cs.png" alt="c#">
+                <div class="lang_name valign-text-middle inter-semi-bold-white-31px" data-id="1:107">C-Sharp (C#)</div>
+                <div class="lang_status-tPRc56 lang_status inter-normal-white-20px" data-id="1:108">Intermediate</div>
+                <div class="bar-tPRc56 bar" data-id="1:109"></div>
+                <div class="progress-tPRc56 progress" data-id="1:110"></div>
+                <div class="percent valign-text-middle inter-semi-bold-white-20px" data-id="1:111">50%</div>
+             </div>
+             <div class="c-P92ysT c" data-id="1:112">
+                <div class="main-Z5AzFD main" data-id="1:113"></div>
+                <div class="bg-Z5AzFD bg" data-id="1:114"></div>
+                <img class="logo-Z5AzFD logo" data-id="1:115" src="assets/c++.png" alt="c++">
+                <div class="lang_name valign-text-middle inter-semi-bold-white-31px" data-id="1:116">C++</div>
+                <div class="lang_status-Z5AzFD lang_status inter-normal-white-20px" data-id="1:117">Beginner</div>
+                <div class="bar-Z5AzFD bar" data-id="1:118"></div>
+                <div class="progress-Z5AzFD progress" data-id="1:119"></div>
+                <div class="percent valign-text-middle inter-semi-bold-white-20px" data-id="1:120">10%</div>
+             </div>
+             <div class="white-hat-s6Xmfc" data-id="1:122">
+                <div class="main-wasOBH main" data-id="1:123"></div>
+                <div class="bg-wasOBH bg" data-id="1:124"></div>
+                <img class="logo-wasOBH logo" data-id="1:125" src="assets/whitehat.png" alt="white hat">
+                <div class="lang_name valign-text-middle inter-semi-bold-white-31px" data-id="1:126">White Hat</div>
+                <div class="lang_status-wasOBH lang_status inter-normal-white-20px" data-id="1:127">Beginner</div>
+                <div class="bar-wasOBH bar" data-id="1:128"></div>
+                <div class="progress-wasOBH progress" data-id="1:129"></div>
+                <div class="percent valign-text-middle inter-semi-bold-white-20px" data-id="1:130">6%</div>
+             </div>
+          </div>
+          <footer class="footer-Ys8k0x" data-id="1:141">
+             <div class="footer-main-u1Y9HI" data-id="1:131"></div>
+             <div class="frostxis-adev-u1Y9HI inter-semi-bold-white-32px" data-id="1:132">frostx.is-a.dev</div>
+             <div class="developer-u1Y9HI" data-id="1:133">developer</div>
+             <div class="git-hub-u1Y9HI" data-id="1:144">
+                <a href="https://github.com/frostx-official" target="_blank">
+                    <img class="logo-uFDoLZ logo" data-id="1:142" src="assets/github.png" alt="logo">
+                    <div class="name-uFDoLZ valign-text-middle name inter-normal-white-20px" data-id="1:143">frostx-official</div>
+                </a>
+            </div>
+             <div class="discord-u1Y9HI discord" data-id="1:145">
+                <img class="logo-fAP6Vs logo" data-id="1:146" src="assets/discord.png" alt="logo">
+                <div class="name-fAP6Vs valign-text-middle name inter-normal-white-20px" data-id="1:147" >frostx_gg</div>
+             </div>
+          </footer>
+          <div class="frame-1-Ys8k0x" data-id="1:149"></div>
+          <div class="contact-me-Ys8k0x valign-text-middle inter-semi-bold-white-32px" data-id="1:150"><a href="mailto:denialfrostiks589@gmail.com" class="contact-me-frx">Contact Me (mailto)</a></div>
+       </div>
+    </div>
+ </body>
 </html>
