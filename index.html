@@ -1,22 +1,660 @@
-<html><head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👋 Hey! I am FrostX</title>
+<html>
+   <head>
+      <style>
+         @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+         @import url("https://fonts.googleapis.com/css?family=Inter:400,100,200italic,200,600,500italic,300,100italic,500,700");
 
-    <script defer src="app.js"></script>
+         *{
+          z-index: 1;
+          }
+        
+          html {
+            scroll-behavior: smooth;
+          }
+        
+          ::-webkit-scrollbar {
+            width: 0.3vmax;
+            background-color:#373737;
+          }
+        
+          ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 0.3125vmax rgb(0, 0, 0); 
+            border-radius: 0vmax;
+          }
+        
+          ::-webkit-scrollbar-thumb {
+            background: rgb(67, 59, 119); 
+            border-radius: 10vmax;
+          }
+        
+          ::-webkit-scrollbar-thumb:hover {
+            background: rgb(67, 59, 119); 
+          }
+         
+         .valign-text-middle {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/site.webmanifest">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    
-    <meta content="FrostX's Portal" property="og:title" />
-    <meta content="Ye, this is site where I post my things and also portfolio." property="og:description" />
-    <meta content="#382BF0" data-react-helmet="true" name="theme-color" />
-  </head>
-  <body>
-    <h1>The website is under development (prob ending this month)</h1>
- </body>
+         :root { 
+         --black: #000000;
+         --shark: #232428;
+         --white: #ffffff;
+         --font-size-l: 3vmax;
+         --font-size-m: 2vmax;
+         --font-size-s: 1.9vmax;
+         --font-size-xs: 1.8vmax;
+         --font-size-xxs: 1.5vmax;
+         --font-size-xxxs: 1.25vmax;
+         --font-family-inter: "Inter", Helvetica;
+         }
+         .inter-light-white-2vmax {
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-m);
+         font-style: normal;
+         font-weight: 300;
+         }
+         .inter-bold-white-2vmax {
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-m);
+         font-style: normal;
+         font-weight: 700;
+         }
+         /* screen - desktop-1 */
+         .desktop-1 {
+         background-color: #282828;
+         height: 187vmax;
+         overflow: hidden;
+         overflow-x: hidden;
+         position: relative;
+         width: 100%;
+         }
+         .desktop-1 .text1-Ys8k0x {
+         background-color: transparent;
+         height: 5.3125vmax;
+         left: 8.9375vmax;
+         position: absolute;
+         top: 8.9375vmax;
+         width: 28.1875vmax;
+         }
+         .desktop-1 .title-gQJ6H2 {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-l);
+         font-style: normal;
+         font-weight: 700;
+         height: auto;
+         left: 2.625vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 0vmax;
+         width: auto;
+         }
+         .desktop-1 .rectangle-1-gQJ6H2 {
+         background-color: var(--white);
+         height: 1.5625vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 1.0625vmax;
+         width: 1.5625vmax;
+         }
+         .desktop-1 .known-as {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-m);
+         font-style: normal;
+         font-weight: 200;
+         height: auto;
+         left: 2.625vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 2.875vmax;
+         width: 200%;
+         }
+         .desktop-1 .text2-Ys8k0x {
+         background-color: transparent;
+         height: 4.875vmax;
+         left: 9.25vmax;
+         position: absolute;
+         top: 16.9375vmax;
+         width: 27.1875vmax;
+         }
+         .desktop-1 .a-software-developer-wMor0f {
+         background-color: transparent;
+         height: auto;
+         left: 2.3125vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 0vmax;
+         width: auto;
+         }
+         .desktop-1 .span1-jSreAb {
+         font-weight: 500;
+         }
+         .desktop-1 .rectangle-2-wMor0f {
+         background-color: var(--white);
+         height: 0.9375vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 2vmax;
+         width: 0.9375vmax;
+         }
+         .desktop-1 .text3-Ys8k0x {
+         background-color: transparent;
+         height: 4.875vmax;
+         left: 9.25vmax;
+         position: absolute;
+         top: 23.625vmax;
+         width: 33.8125vmax;
+         }
+         .desktop-1 .i-started-programmin-1I6Q8Y {
+         background-color: transparent;
+         height: auto;
+         left: 2.3125vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 0vmax;
+         width: auto;
+         }
+         .desktop-1 .rectangle-3-1I6Q8Y {
+         background-color: var(--white);
+         height: 0.9375vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 2vmax;
+         width: 0.9375vmax;
+         }
+         .desktop-1 .discord-Ys8k0x {
+         height: 37.0625vmax;
+         right: 8.9375vmax;
+         top: 3.5625vmax;
+         width: 24.5vmax;
+         }
+         .desktop-1 .footer-Ys8k0x {
+         background-color: transparent;
+         height: 12.4375vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 175.0625vmax;
+         width: 100%;
+         }
+         .desktop-1 .footer-main-u1Y9HI {
+         background-color: #1f1f1f;
+         height: 12.4375vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 0vmax;
+         width: 100%;
+         }
+         .desktop-1 .frostxis-adev-u1Y9HI {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-m);
+         font-style: normal;
+         font-weight: 600;
+         height: auto;
+         left: 8.9375vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 3.0625vmax;
+         width: auto;
+         }
+         .desktop-1 .developer-u1Y9HI {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-xxs);
+         font-style: normal;
+         font-weight: 400;
+         height: auto;
+         left: 8.9375vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 5.25vmax;
+         width: auto;
+         }
+         .desktop-1 .git-hub-u1Y9HI {
+         background-color: transparent;
+         height: 3.1875vmax;
+         left: 69.875vmax;
+         position: absolute;
+         top: 3.0625vmax;
+         width: 11.4375vmax;
+         }
+         .desktop-1 .logo-uFDoLZ {
+         height: 3vmax;
+         top: 0.0625vmax;
+         width: 3vmax;
+         }
+         .desktop-1 .name-uFDoLZ {
+         left: 3.3125vmax;
+         }
+         .desktop-1 .discord-u1Y9HI {
+         height: 3.1875vmax;
+         left: 70.3vmax;
+         top: 6vmax;
+         width: 10.9375vmax;
+         }
+         .desktop-1 .logo-fAP6Vs {
+         height: 2.1875vmax;
+         top: 0.5vmax;
+         width: 2.1875vmax;
+         }
+         .desktop-1 .name-fAP6Vs {
+         left: 2.8125vmax;
+         }
+         .desktop-1 .button-frame-Ys8k0x {
+         background-color: var(--shark);
+         border: 0.0625vmax solid;
+         border-color: #363636;
+         border-radius: 10vmax;
+         height: 100vmax;
+         left: 8.9375vmax;
+         overflow: hidden;
+         position: absolute;
+         top: 550vmax;
+         width: 300vmax;
+         }
+         .desktop-1 .text-vi84q8 {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-m);
+         font-style: normal;
+         font-weight: 600;
+         height: 6.375vmax;
+         left: 0vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: center;
+         top: -0.1875vmax;
+         width: 300vmax;
+         }
+         .desktop-1 .line-1-Ys8k0x {
+         background-color: transparent;
+         height: 0.0625vmax;
+         left: 23.9375vmax;
+         object-fit: cover;
+         position: absolute;
+         top: 49.0625vmax;
+         width: 50vmax;
+         }
+         .desktop-1 .my-latest-projects-cards-are-clickable-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 39%;
+            letter-spacing: 0.1vmax;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 54.3vmax;
+            width: auto;
+         }
+         .desktop-1 .span1-nuB8Zo {
+         font-weight: 100;
+         }
+         .desktop-1 .project-Ys8k0x {
+         left: 8.9375vmax;
+         top: 64.0625vmax;
+         }
+         .desktop-1 .project-name-7ro0tq {
+         height: 3.5625vmax;
+         top: 8.9375vmax;
+         width: 500vmax;
+         }
+         .desktop-1 .a-modifier-plugin-fr-7ro0tq {
+         background-color: transparent;
+         height: auto;
+         left: 1.6875vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 12.5vmax;
+         width: 29.5vmax;
+         }
+         .desktop-1 .project-V3rtYt {
+         right: 8.9375vmax;
+         top: 64.0625vmax;
+         }
+         .desktop-1 .project-name-DcvTWq {
+         height: 3.5625vmax;
+         top: 8.9375vmax;
+         width: 500vmax;
+         }
+         .desktop-1 .a-modern-object-orie-DcvTWq {
+         background-color: transparent;
+         height: auto;
+         left: 1.6875vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 12.5vmax;
+         width: 29.625vmax;
+         }
+         .desktop-1 .project-InqUpZ {
+         left: 8.9375vmax;
+         top: 90.625vmax;
+         }
+         .desktop-1 .project-name-nMMA9W {
+         height: 3.5625vmax;
+         top: 8.9375vmax;
+         width: 500vmax;
+         }
+         .desktop-1 .i-made-a-community-f-nMMA9W {
+         background-color: transparent;
+         height: auto;
+         left: 1.6875vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 12.5vmax;
+         width: 29.5vmax;
+         }
+         .desktop-1 .project-EAe9Rz {
+         right: 8.9375vmax;
+         top: 90.625vmax;
+         }
+         .desktop-1 .project-name-OqNI4c {
+         height: 3.5625vmax;
+         top: 8.9375vmax;
+         width: 31.25vmax;
+         }
+         .desktop-1 .an-unique-gui-librar-OqNI4c {
+         background-color: transparent;
+         height: auto;
+         left: 1.6875vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 12.5vmax;
+         width: 29.5vmax;
+         }
+         .desktop-1 .line-2-Ys8k0x {
+         background-color: transparent;
+         height: 0.0625vmax;
+         left: 24.125vmax;
+         object-fit: cover;
+         position: absolute;
+         top: 121.6875vmax;
+         width: 50vmax;
+         }
+         .desktop-1 .other-stuff-about-me-Ys8k0x {
+         background-color: transparent;
+         height: auto;
+         left: 38.5%;
+         letter-spacing: 0.1vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: center;
+         top: 125.625vmax;
+         width: auto;
+         }
+         .desktop-1 .i-have-no-more-ideas-Ys8k0x {
+         background-color: transparent;
+         height: auto;
+         left: 31%;
+         letter-spacing: 0.1vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: center;
+         top: 164.375vmax;
+         width: auto;
+         }
+         .desktop-1 .span1-x9Uzz3 {
+         font-weight: 100;
+         }
+         .desktop-1 .info-Ys8k0x {
+         left: 8.9375vmax;
+         }
+         .desktop-1 .project-name-EJJinM {
+         height: auto;
+         top: 1.9375vmax;
+         width: 31.25vmax;
+         }
+         .desktop-1 .info-V3rtYt {
+         right: 8.9375vmax;
+         }
+         .desktop-1 .project-name-w4yTkN {
+         height: auto;
+         top: 1.9375vmax;
+         width: 28.25vmax;
+         }
+         .desktop-1 .span1-XIu8nV {
+         font-weight: 200;
+         }
+         .desktop-1 .span3-XIu8nV {
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-xs);
+         font-style: italic;
+         font-weight: 200;
+         }
+         .desktop-1 .span4-XIu8nV {
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-s);
+         font-style: italic;
+         font-weight: 200;
+         }
+         .desktop-1 .discord {
+         background-color: transparent;
+         position: absolute;
+         }
+         .desktop-1 .divider {
+         background-color: transparent;
+         height: 2vmax;
+         left: 0vmax;
+         position: absolute;
+         width: 45vmax;
+         top: 7.3vmax;
+         }
+         .desktop-1 .image {
+         background-color: transparent;
+         height: 8.25vmax;
+         left: 0vmax;
+         position: absolute;
+         top: 0vmax;
+         width: 100%;
+
+         object-fit: cover;
+         object-position: 0 14%;
+         }
+         .desktop-1 .info {
+         background-color: var(--shark);
+         border-radius: 0.5vmax;
+         height: 22.625vmax;
+         overflow: hidden;
+         position: absolute;
+         top: 132.0625vmax;
+         width: 32.9375vmax;
+         }
+         .desktop-1 .language {
+         background-color: transparent;
+         height: auto;
+         left: 1.5vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 8.1875vmax;
+         width: 90%;
+         }
+         .desktop-1 .logo {
+         background-color: transparent;
+         left: 0vmax;
+         position: absolute;
+         }
+         .desktop-1 .name {
+         background-color: transparent;
+         color: var(--white);
+         font-family: var(--font-family-inter);
+         font-size: var(--font-size-xxxs);
+         font-style: normal;
+         font-weight: 400;
+         height: 3.1875vmax;
+         letter-spacing: 0.00vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         top: 0vmax;
+         width: 8vmax;
+         }
+         .desktop-1 .project {
+         background-color: var(--shark);
+         border-radius: 0.5vmax;
+         height: 22.625vmax;
+         overflow: hidden;
+         position: absolute;
+         width: 38vmax;
+         }
+         .desktop-1 .project-name {
+         background-color: transparent;
+         left: 1.6875vmax;
+         letter-spacing: 0.1vmax;
+         line-height: normal;
+         position: absolute;
+         text-align: left;
+         }
+         .desktop-1 .span1 {
+            color: var(--white);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: italic;
+            font-weight: 200;
+         }
+      </style>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>👋 Hey! I am FrostX</title>
+
+      <script defer src="app.js"></script>
+
+      <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+      <link rel="manifest" href="favicons/site.webmanifest">
+      <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      
+      <meta content="FrostX's Portal" property="og:title"/>
+      <meta content="Ye, this is site where I post my things and also portfolio." property="og:description"/>
+      <meta content="#382BF0" data-react-helmet="true" name="theme-color"/>
+   </head>
+   <body style="margin: 0;background: #282828;">
+      <div class="container-center-horizontal">
+         <div class="desktop-1 screen">
+            <div class="text1-Ys8k0x">
+               <h1 class="title-gQJ6H2">Denial Francesco</h1>
+               <div class="rectangle-1-gQJ6H2"></div>
+               <div class="known-as" style="opacity:1;" id="known-as">known as “frost”</div>
+            </div>
+            <div class="text2-Ys8k0x">
+               <p class="a-software-developer-wMor0f inter-light-white-2vmax"><span class="span0-jSreAb inter-light-white-2vmax">A </span><span class="span1-jSreAb span1">software</span><span class="span2-jSreAb inter-light-white-2vmax"> developer with<br>a 4 years experience.</span></p>
+               <div class="rectangle-2-wMor0f"></div>
+            </div>
+            <div class="text3-Ys8k0x">
+               <p class="i-started-programmin-1I6Q8Y inter-light-white-2vmax">I started programming since 2019<br>and doing it still to this day ;)</p>
+               <div class="rectangle-3-1I6Q8Y"></div>
+            </div>
+            <img class="discord-Ys8k0x discord" src="assets/discord-profile.png">
+            <div class="button-frame-Ys8k0x">
+               <div class="text-vi84q8 valign-text-middle">Contact Me</div>
+            </div>
+
+
+            <img class="line-1-Ys8k0x" src="assets/line.svg">
+            <p class="my-latest-projects-cards-are-clickable-Ys8k0x inter-bold-white-2vmax">
+              <span>My Latest Projects<br></span>
+              <span class="span1">(cards are clickable)</span>
+            </p>
+
+            <a href="https://frostx.is-a.dev/enoxis/">
+               <div class="project-Ys8k0x project">
+                  <div class="project-name-7ro0tq valign-text-middle project-name inter-bold-white-2vmax">Enoxis</div>
+                  <p class="a-modifier-plugin-fr-7ro0tq inter-light-white-2vmax">A modifier &amp; plugin framework for a social media called “VKontakte”</p>
+                  <img class="image" src="assets/blurred-console.png">
+                  <img class="divider" src="assets/line.svg">
+               </div>
+            </a>
+            <a href="https://github.com/FrostX-Official/foxford/">
+               <div class="project-V3rtYt project">
+                  <div class="project-name-DcvTWq valign-text-middle project-name inter-bold-white-2vmax">foxford</div>
+                  <p class="a-modern-object-orie-DcvTWq inter-light-white-2vmax">A modern object-oriented asynchronous Python wrapper for the Foxford's web API.</p>
+                  <img class="image" src="assets/blurred-foxford-dashboard.png">
+                  <img class="divider" src="assets/line.svg">
+               </div>
+            </a>
+            <a href="https://discord.gg/c5Ee98GNvb">
+               <div class="project-InqUpZ project">
+                  <div class="project-name-nMMA9W valign-text-middle project-name inter-bold-white-2vmax">Game Modding</div>
+                  <p class="i-made-a-community-f-nMMA9W inter-light-white-2vmax">I made a community for a game<br>called “Lizards Must Die”, people there make mods.<br><small>(⚠ Russian)</small></p>
+                  <img class="image" src="assets/blurred-modding-discord.png">
+                  <img class="divider" src="assets/line.svg">
+               </div>
+            </a>
+            <a href="https://frostx.is-a.dev/LunariLib/">
+               <div class="project-EAe9Rz project">
+                  <div class="project-name-OqNI4c valign-text-middle project-name inter-bold-white-2vmax">LunariLib</div>
+                  <p class="an-unique-gui-librar-OqNI4c inter-light-white-2vmax">An unique GUI library for making a roblox scripts.</p>
+                  <img class="image" src="assets/blurred-lib.png">
+                  <img class="divider" src="assets/line.svg">
+               </div>
+            </a>
+
+            
+            <img class="line-2-Ys8k0x" src="assets/line.svg">
+            <div class="other-stuff-about-me-Ys8k0x inter-bold-white-2vmax">Other stuff about me</div>
+            <div class="info-Ys8k0x info">
+               <div class="project-name-EJJinM project-name inter-bold-white-2vmax">Programming languages<br>i know very good:</div>
+               <p class="language inter-light-white-2vmax">* Python<br>* Lua (specially LuaU &amp; GLua)<br>* C#</p>
+            </div>
+            <div class="info-V3rtYt info">
+               <p class="project-name-w4yTkN project-name inter-bold-white-2vmax">The way you should contact me:</p>
+               <p class="language inter-light-white-2vmax"><span class="span0-XIu8nV inter-light-white-2vmax">Discord: <br></span><span class="span1-XIu8nV span1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frostx_gg<br></span><span class="span2-XIu8nV inter-light-white-2vmax">Gmail:<br></span><span class="span3-XIu8nV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="span4-XIu8nV">denialfrostiks589@gmail.com</span></p>
+            </div>
+
+            <p class="i-have-no-more-ideas-Ys8k0x inter-bold-white-2vmax">
+               <span class="span0-x9Uzz3 inter-bold-white-2vmax">i have no more ideas to leave here.<br></span>
+               <span class="span1-x9Uzz3 span1">(coder mind)</span>
+            </p>
+
+            <footer class="footer-Ys8k0x">
+               <div class="footer-main-u1Y9HI"></div>
+               <div class="frostxis-adev-u1Y9HI">frostx.is-a.dev</div>
+               <div class="developer-u1Y9HI">developer</div>
+               <div class="git-hub-u1Y9HI">
+                  <img class="logo-uFDoLZ logo" src="assets/github.png">
+                  <div class="name-uFDoLZ valign-text-middle name">frostx-official</div>
+               </div>
+               <div class="discord-u1Y9HI discord">
+                  <img class="logo-fAP6Vs logo" src="assets/discord.png">
+                  <div class="name-fAP6Vs valign-text-middle name">frostx_gg</div>
+               </div>
+            </footer>
+         </div>
+      </div>
+   </body>
 </html>

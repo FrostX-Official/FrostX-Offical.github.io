@@ -1,12 +1,14 @@
 list = [
     "known as “frost”",
+    "known as “game modder”",
     "known as “software developer”",
     "known as “hacker on lego game”",
     "known as “enoxis dev”",
     "known as “dev on python”",
     "known as “game developer”",
     "known as “8 grader”",
-    "known as “undefined” ;)"
+    "known as “undefined” ;)",
+    "known as “frost”"
 ]
 
 current = 1
