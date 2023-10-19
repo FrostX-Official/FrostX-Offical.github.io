@@ -1,9 +1,8 @@
 ## FrostX's Portal
 There's things that I publish here including portfolio.
 
-# 06.10 - Will be done this month :trollface:
-
-# UNDER DEVELOPMENT RIGHT NOW 23.09.2023
+# New 4 version:
+~ Fixed alot of stuff ig
 
 # New 3 version:
 ~ Fully remastered portfolio
