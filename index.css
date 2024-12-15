@@ -628,6 +628,7 @@
 }
 
 .footer-scroll {
+    text-shadow: 0 0 10px var(--white);
     font-family: "Inter", sans-serif;
     font-size: 24px;
     text-indent: 24px;
