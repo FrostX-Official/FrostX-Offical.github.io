@@ -1,31 +1,124 @@
-<html>
-   <head>
-      <style>
-         :root {
-            --font-family-inter:"Inter", Helvetica;
-          }
-         body {
-            background-color: #1A1A1A;
-            background-image: url("bg.svg");
-            background-size: 100%;
-            background-repeat: repeat;
-            padding: 20px;
-            color: white;
-            font-family:var(--font-family-inter);
-            font: bold;
-            text-align: center;
-         }
-         .date {
-            color: #999999;
-         }
-      </style>
+<!--
+	frost's portfolio version 3. ❤︎
 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>frost</title>
-      <meta content="frost portal 🤙" property="og:title"/>
-   </head>
-   <body>
-      <h1>Work In Progress <span class="date">| 09.27.24</span></h1>
-      <label>main page is currently in development.</label>
-   </body>
+	my bad for shitcode,
+	im just not frontend developer and don't want to fuck with learning alignments forever,
+	so everything is absolute position and not adaptive.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="frost" />
+	<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+	<title>frost's &quot;portfolio&quot;</title>
+	<meta content="frost's &quot;portfolio&quot;" property="og:title" />
+	<meta content="hell yeah!!" property="og:description" />
+	<meta content="https://frostx.is-a.dev" property="og:url" />
+	<meta content="https://frostx.is-a.dev/heart-filled.png" property="og:image" />
+	<meta content="#cd71ff" data-react-helmet="true" name="theme-color" />
+	<meta name="twitter:card" content="summary_large_image">
+
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div class="portfolio"><img class="bg-grid" src="assets/bg-grid.png">
+		<h1 class="name">frost</h1>
+		<p class="description inter-medium-white-24px">
+			<span>An experienced </span><span class="bold-description">Roblox</span><span> game developer.</span>
+		</p>
+		<div class="contacts">
+			<a href="https://www.roblox.com/users/1631662564/profile"><div class="roblox">
+				<div class="text">@frostxoff</div>
+				<img class="logo" src="assets/roblox-logo.png">
+			</div></a>
+			<a href="https://discordapp.com/users/908779319084589067/"><div class="discord">
+				<div class="text">@fsxg</div>
+				<img class="logo" src="assets/discord-logo.png">
+			</div></a>
+			<a href="https://devforum.roblox.com/u/frostxoff"><div class="devforum">
+				<img class="logo" src="assets/devforum-logo.png">
+			</div></a>
+		</div>
+		<div class="skills">
+			<div class="title inter-medium-white-24px">Skills</div>
+			<a href="https://rojo.space/">
+				<div class="rojo skill"><img class="logo" src="assets/rojo-skill.png"></div>
+			</a>
+			<a href="https://devforum.roblox.com/t/2959671">
+				<div class="blink skill"><img class="logo" src="assets/blink-skill.png"></div>
+			</a>
+			<a href="https://zap.redblox.dev/">
+				<div class="zap skill"><img class="logo" src="assets/zap-skill.png"></div>
+			</a>
+			<a href="https://www.figma.com/">
+				<div class="figma skill"><img class="logo" src="assets/figma-skill.png"></div>
+			</a>
+			<a href="https://code.visualstudio.com/">
+				<div class="vscode skill"><img class="logo" src="assets/vscode-skill.png"></div>
+			</a>
+			<a href="https://luau.org/">
+				<div class="luau skill"><img class="logo" src="assets/luau-skill.png"></div>
+			</a>
+			<a href="https://git-scm.com/">
+				<div class="git skill"><img class="logo" src="assets/git-skill.png"></div>
+			</a>
+		</div>
+		<div class="projects">
+			<div class="title inter-medium-white-24px">Projects</div>
+			<a href="https://www.roblox.com/games/16971245917"><div class="datalose project">
+				<img class="bg" src="assets/datalose-thumbnail.png">
+				<div class="project-thumbnail-hider"></div>
+				<img class="line-1" src="assets/project-line.png">
+				<div class="title inter-medium-white-24px">Datalose</div>
+				<div class="sub-title inter-extra-light-granite-gray-16px">500K+ Visits</div>
+				<div class="description inter-light-white-16px">A parkour game</div>
+			</div></a>
+			<a href="https://www.roblox.com/games/16209495961"><div class="project-reflex project">
+				<img class="bg" src="assets/project-reflex-thumbnail.png">
+				<div class="project-thumbnail-hider"></div>
+				<img class="line-1" src="assets/project-line.png">
+				<div class="title inter-medium-white-24px">Project Reflex</div>
+				<div class="sub-title inter-extra-light-granite-gray-16px">1K Visits</div>
+				<div class="description inter-light-white-16px">A rhythm game</div>
+			</div></a>
+			<a href="https://github.com/rbx-stable"><div class="prismatic project" id="prismatic-project">
+				<img class="bg" src="assets/prismatic-thumbnail.png">
+				<div class="project-thumbnail-hider"></div>
+				<img class="line-1" src="assets/project-line.png">
+				<div class="title inter-medium-white-24px">Prismatic</div>
+				<div class="sub-title inter-extra-light-granite-gray-16px">In development</div>
+				<div class="description inter-light-white-16px">A zap real-time compiler
+			</div></a>
+			</div><img class="projects-fadeout" src="assets/projects-fadeout.png">
+		</div>
+		<div class="heart"></div>
+		<p class="christmas-text">Happy Christmas!</p>
+		<p class="wip-text">something will definely be here</p>
+		<section class="footer-section">
+            <div class="footer">
+                <a style="color:#FF4F4F" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#ACFF6A" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FFDD64" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FF4F4F" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#ACFF6A" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FFDD64" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FF4F4F" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#ACFF6A" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FFDD64" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FF4F4F" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#ACFF6A" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FFDD64" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FF4F4F" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#ACFF6A" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+                <a style="color:#FFDD64" class="footer-scroll" href="https://frostx.is-a.dev">frostx.is-a.dev</a>
+            </div>
+        </section>
+	</div>
+</body>
 </html>

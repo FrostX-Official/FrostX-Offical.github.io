@@ -1,0 +1,652 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
+@import url(https://fonts.googleapis.com/css?family=Inter:900,200italic,200,600,300,300italic,500,700);
+
+* {
+    box-sizing: border-box;
+    
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+:root {
+    --black: #000000;
+    --granite-gray: #666666;
+    --hover: #cd71ff;
+    --white: #ffffff;
+    --font-size-l: 128px;
+    --font-size-m: 24px;
+    --font-size-s: 16px;
+    --font-family-inter: "Inter", Helvetica
+}
+
+.inter-medium-white-24px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500
+}
+
+.inter-extra-light-granite-gray-16px {
+    color: var(--granite-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-style: italic;
+    font-weight: 200
+}
+
+.inter-light-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-style: italic;
+    font-weight: 300
+}
+
+.portfolio {
+    background-color: transparent;
+    background-image: url(assets/bg-dither.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    margin: 0;
+    min-height: 920px;
+    min-width: 1440px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio .bg-grid {
+    background-color: transparent;
+    height: 801px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 973px
+}
+
+.portfolio .name {
+    user-select: text;
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 900;
+    height: auto;
+    left: 192px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 213px;
+    width: auto
+}
+
+.portfolio .description {
+    user-select: text;
+
+    background-color: transparent;
+    height: auto;
+    left: 192px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 354px;
+    width: auto
+}
+
+.portfolio .bold-description {
+    user-select: text;
+
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 700
+}
+
+.portfolio .contacts {
+    background-color: transparent;
+    height: 52px;
+    left: 192px;
+    position: absolute;
+    top: 412px;
+    width: 342px
+}
+
+.portfolio .roblox {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 52px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 191px
+}
+
+.portfolio .roblox .text {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: italic;
+    font-weight: 200;
+    height: auto;
+    left: 57px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 12px;
+    width: auto
+}
+
+.portfolio .roblox .logo {
+    height: 32px;
+    top: 10px
+}
+
+.portfolio .discord {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 52px;
+    left: 202px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 140px
+}
+
+.portfolio .discord .text {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-style: italic;
+    font-weight: 200;
+    height: auto;
+    left: 56px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 12px;
+    width: auto
+}
+
+.portfolio .discord .logo {
+    height: 24px;
+    top: 14px
+}
+
+.portfolio .devforum {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 52px;
+    left: 353px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 52px
+}
+
+.portfolio .devforum .logo {
+    height: 32px;
+    top: 10px;
+    left: 9px;
+}
+
+.portfolio .skills {
+    background-color: transparent;
+    height: 115px;
+    left: 192px;
+    position: absolute;
+    top: 479px;
+    width: 591px
+}
+
+.portfolio .rojo {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .rojo .logo {
+    background-color: transparent;
+    height: 22px;
+    left: 12px;
+    position: absolute;
+    top: 27px;
+    width: 50px
+}
+
+.portfolio .blink {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 86px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .blink .logo {
+    height: 22px;
+    left: 12px;
+    top: 27px;
+    width: 50px
+}
+
+.portfolio .zap {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 172px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .zap .logo {
+    height: 40px;
+    left: 17px;
+    top: 18px;
+    width: 40px
+}
+
+.portfolio .figma {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 258px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .figma .logo {
+    background-color: transparent;
+    height: 50px;
+    left: 12px;
+    object-fit: cover;
+    position: absolute;
+    top: 13px;
+    width: 50px
+}
+
+.portfolio .vscode {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 344px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .vscode .logo {
+    height: 50px;
+    left: 12px;
+    top: 13px;
+    width: 50px
+}
+
+.portfolio .luau {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 430px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .luau .logo {
+    background-color: transparent;
+    height: 50px;
+    left: 12px;
+    position: absolute;
+    top: 13px;
+    width: 50px
+}
+
+.portfolio .git {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 75px;
+    left: 516px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 75px
+}
+
+.portfolio .git .logo {
+    height: 50px;
+    left: 12px;
+    top: 13px;
+    width: 50px
+}
+
+.portfolio .projects {
+    background-color: transparent;
+    height: 199px;
+    left: 191px;
+    position: absolute;
+    top: 606px;
+    width: 764px
+}
+
+.portfolio .datalose {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 156px;
+    left: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 43px;
+    width: 247px
+}
+
+.project .title {
+    background-color: transparent;
+    height: auto;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 55px;
+    width: auto
+}
+
+.project .sub-title {
+    background-color: transparent;
+    height: auto;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 79px;
+    width: auto
+}
+
+.project .description {
+    background-color: transparent;
+    height: auto;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 98px;
+    width: auto
+}
+
+.portfolio .project-reflex {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 156px;
+    left: 259px;
+    overflow: hidden;
+    position: absolute;
+    top: 43px;
+    width: 247px
+}
+
+.portfolio .projects .prismatic {
+    background-color: var(--black);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 10px;
+    height: 156px;
+    left: 517px;
+    overflow: hidden;
+    position: absolute;
+    top: 43px;
+    width: 247px
+}
+
+.portfolio .projects-fadeout {
+    background-color: transparent;
+    height: 192px;
+    left: 617px;
+    position: absolute;
+    top: 7px;
+    width: 147px
+}
+
+.heart {
+    background-image: url("assets/heart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 45px;
+    left: 531px;
+    position: absolute;
+    top: 270px;
+    width: 48px;
+    border: none;
+    cursor: pointer;
+}
+
+.heart:hover {
+    background-image: url("assets/heart-filled.png");
+    cursor:copy;
+}
+
+.portfolio .bg {
+    background-color: transparent;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 247px
+}
+
+.portfolio .image {
+    background-color: transparent;
+    object-fit: contain;
+    position: absolute
+}
+
+.portfolio .line-1 {
+    background-color: transparent;
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 47px;
+    width: 247px
+}
+
+.portfolio .logo {
+    background-color: transparent;
+    left: 13px;
+    object-fit: cover;
+    position: absolute;
+    width: 32px
+}
+
+.portfolio .project-thumbnail-hider {
+    background-color: var(--black);
+    height: 109px;
+    left: 0;
+    position: absolute;
+    top: 47px;
+    width: 247px
+}
+
+.portfolio .title {
+    background-color: transparent;
+    height: auto;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    width: auto
+}
+
+/* CONTACTS HOVER */
+
+.roblox {
+    transition: 250ms;
+}
+.discord {
+    transition: 250ms;
+}
+.devforum {
+    transition: 250ms;
+}
+
+.roblox:hover {
+    border-color: var(--hover);
+    margin-top: -5px;
+    transition: 250ms;
+}
+.discord:hover {
+    border-color: var(--hover);
+    margin-top: -5px;
+    transition: 250ms;
+}
+.devforum:hover {
+    border-color: var(--hover);
+    margin-top: -5px;
+    transition: 250ms;
+}
+
+/* OTHER HOVER */
+
+.project {
+    transition: 250ms;
+}
+.skill {
+    transition: 250ms;
+}
+
+.project:hover {
+    border-color: var(--hover);
+    margin-top: -5px;
+    transition: 250ms;
+}
+
+#prismatic-project {
+    transition: 300ms;
+}
+#prismatic-project:hover {
+    border-color: red;
+    margin-top: initial;
+    transition: initial;
+    transition: 300ms;
+}
+
+.skill:hover {
+    border-color: var(--hover);
+    margin-top: -5px;
+    transition: 250ms;
+}
+
+.portfolio .footer-section {
+    background-color: transparent;
+    background-image: url(assets/footer-dither.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 52px;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes move {
+    to {
+        transform: translateX(-20%);
+    }
+}
+
+.footer-section {
+    overflow: hidden;
+    display: inline-block;
+    border: 0px solid white;
+    border-top-width: 2px;
+    white-space: nowrap;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+}
+
+.footer {
+    background-color: black;
+    width: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: move 2s infinite linear;
+    display: table;
+    height: 52px;
+    overflow: hidden;
+}
+
+.footer-scroll {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    text-indent: 24px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.christmas-text {
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 69px; /* nice */
+}
+.wip-text {
+    font-family: "Inter", sans-serif;
+    color: #3c3c3c;
+    position: absolute;
+    right: 350px;
+    top: 50%;
+}
