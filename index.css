@@ -636,6 +636,12 @@
     display: table-cell;
 }
 
+.discord-user-embed {
+    position: absolute;
+    right: 200px;
+    top: 235px;
+}
+
 .christmas-text {
     font-family: "Inter", sans-serif;
     color: var(--white);
@@ -643,11 +649,4 @@
     text-align: center;
     position: absolute;
     bottom: 69px; /* nice */
-}
-.wip-text {
-    font-family: "Inter", sans-serif;
-    color: #3c3c3c;
-    position: absolute;
-    right: 350px;
-    top: 50%;
 }
